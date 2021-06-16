@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ConnectedApp xmlns="http://soap.sforce.com/2006/04/metadata">
+    <contactEmail>rlopez@nectia.com</contactEmail>
+    <label>Prueba DX</label>
+    <oauthConfig>
+        <callbackUrl>http://localhost:1717/OauthRedirect</callbackUrl>
+        <certificate>MIIDnTCCAoUCFAyDpTAvPq46/47owVZPSFgTzgzIMA0GCSqGSIb3DQEBCwUAMIGKMQswCQYDVQQGEwJDTDERMA8GA1UECAwIU0FOVElBR08xETAPBgNVBAcMCFNBTlRJQUdPMQ0wCwYDVQQKDARURVNUMQ4wDAYDVQQLDAVDTE9VRDEUMBIGA1UEAwwLQU1JQ0FSX1RFU1QxIDAeBgkqhkiG9w0BCQEWEXJsb3BlekBuZWN0aWEuY29tMB4XDTIxMDUyNzE5MjcxNFoXDTIyMDUyNzE5MjcxNFowgYoxCzAJBgNVBAYTAkNMMREwDwYDVQQIDAhTQU5USUFHTzERMA8GA1UEBwwIU0FOVElBR08xDTALBgNVBAoMBFRFU1QxDjAMBgNVBAsMBUNMT1VEMRQwEgYDVQQDDAtBTUlDQVJfVEVTVDEgMB4GCSqGSIb3DQEJARYRcmxvcGV6QG5lY3RpYS5jb20wggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQCaPsiHotza9FDcDkyFSylE9OM6OFKrpC4vB5SJcr7vT5Ys/2b5zQsgmmNT8bLA2VvgoYS42hmEuz28DKQPHizK8/0OxxnVjE8KyWEveZIqh9n/4Lwgn58K20WeN50uF+GmKD2cUCrhZYeGo4kPJgRXMJTuyIxmgzr/xlX9BbELpsRRyXmH2ksKLcIjERkHV20gG3VSGS3h9f3dYpRLXFdZm/79FJRClvrFpRQboYMOnCdLnRBaAd+L1DU1v139n9W5bITOrQIi93XVtSZoIxOFHjbWXmoFEDUiNNGHTWpwebHmfJEjxYFvxSGpA/gdDKjWdkQbHsVVrm5U3tZNQyEtAgMBAAEwDQYJKoZIhvcNAQELBQADggEBABslpZvNdpDN2fV0zq+8lTzHbc9Gk5mCyKi4hLozGw7dsUwn0dQIVahmX1/7Ml+aYGlZE2phko1IYHXoyt2Fg/TIbTa9Lnjg/U6ytLk3qD6fBoAQz4j6HyAjya+G0iNOvZDjntrujPCcu2rcgZBCKlsNNR+dPj6CnXz7e1jiYsTTdfT7LIdYZFVefPzCJ4tdFHG+aFFpyUrazJxyMGItYUb1WBrAS82Qbin7pLjYQEm0hvsOn4Qkv32Ye5n3cgMSeyqdlqf8lCEmnEfLKiyTHOM3IvRT2iP4pROoGfcErRJnRyLfGAwu7cRccQK+ht6k3vx1IsIh9g3ZSrQN0Y1Dklo=</certificate>
+        <consumerKey>3MVG9dPGzpc3kWyc1hnghxZsLUdkxINxVD1ePCkmLoYbHH.6PssgJdYWcIksqacJBX04sk3.GdKVg2XSl_R.P</consumerKey>
+        <isAdminApproved>true</isAdminApproved>
+        <isConsumerSecretOptional>false</isConsumerSecretOptional>
+        <isIntrospectAllTokens>false</isIntrospectAllTokens>
+        <scopes>Api</scopes>
+        <scopes>Web</scopes>
+        <scopes>RefreshToken</scopes>
+    </oauthConfig>
+    <oauthPolicy>
+        <ipRelaxation>ENFORCE</ipRelaxation>
+        <refreshTokenPolicy>infinite</refreshTokenPolicy>
+    </oauthPolicy>
+    <profileName>Administrador del sistema</profileName>
+</ConnectedApp>

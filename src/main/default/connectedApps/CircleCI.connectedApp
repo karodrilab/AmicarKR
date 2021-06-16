@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ConnectedApp xmlns="http://soap.sforce.com/2006/04/metadata">
+    <contactEmail>krodriguez@nectia.com</contactEmail>
+    <label>CircleCI</label>
+    <oauthConfig>
+        <callbackUrl>http://localhost:1717/OauthRedirect</callbackUrl>
+        <certificate>MIIDlTCCAn0CFH7x9u1CAGrxzIdH++y97rmMOZJ9MA0GCSqGSIb3DQEBCwUAMIGGMQswCQYDVQQGEwJBVTELMAkGA1UECAwCQ0wxETAPBgNVBAcMCFNBTlRJQUdPMQ8wDQYDVQQKDAZORUNUSUExEDAOBgNVBAsMB1JFTEVBU0UxDjAMBgNVBAMMBUtBUkVOMSQwIgYJKoZIhvcNAQkBFhVLUk9EUklHVUVaQE5FQ1RJQS5DT00wHhcNMjEwNjAyMTk0NTU5WhcNMjIwNjAyMTk0NTU5WjCBhjELMAkGA1UEBhMCQVUxCzAJBgNVBAgMAkNMMREwDwYDVQQHDAhTQU5USUFHTzEPMA0GA1UECgwGTkVDVElBMRAwDgYDVQQLDAdSRUxFQVNFMQ4wDAYDVQQDDAVLQVJFTjEkMCIGCSqGSIb3DQEJARYVS1JPRFJJR1VFWkBORUNUSUEuQ09NMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAtWGU3Q7w52huhOEqtwzMQKaRBvXU2/u7tFtBxkXyq2hG+ay0RMydxlLngnHr5fqVdFYo/vi+OXvR2FCjrk31pP5EJ5ub7ukZ8PXasO6nKPifVOv+Koqbk3h/qsE9L74iRRrG/KOaciO1v/hRsMejYJ9QObHf/d4V3GUF4kNj3taRhsaR9WGx1ngYtiV3vW7+iDZqh3KMLXHhkcXsa+cbsgNviVqmeJMBwPpKcTkItNZxb2TF+r8bAsuwQKMVp44VdMkyfiBi8tcmLA20KkFccFH0yFrq1yAJ7GYYt71qRDPd4DMdKUKFEyS/uplUTjS1o+bxFMnh+YOrVG+CE5HsTQIDAQABMA0GCSqGSIb3DQEBCwUAA4IBAQBWuDhIiZ9M83CbbM1iQqIv1QA5vpqEjqjj1N/BDDCpNZKtQVfRGXc1D7P7AOc0s+fU9Y6R9AQOBe4dvVoZuUFI/3hmrgubtj4m1+vTZ49UqBgeYADBLMDiFtdmH9zRtrBvvirNwdxH6YRu04mEjypPgjHVktsEB+XoHz1MoCCLh0bDyVPiT8RZx0nSEZjGGnfPfASS2ZSYTs3Cb4LY/pqMUKCzaPWkyTtgyVDu5URLzM3OgkjnqUgwTTZiRLVXNxJCs5k8ob3OGTjsLhU6o6qYvyjvAp7S4FiH3KIMCt6orv4QFeS+SnmAIb6eHWRAPFSGatuzulMS6o3Ywyb+PMQ4</certificate>
+        <consumerKey>3MVG9dPGzpc3kWyc1hnghxZsLUWX28GBQxzH57D1ms9YUYBCgvhk0NQJjCqCxDMeYw5ql_d_J7_2kl6aALGxu</consumerKey>
+        <isAdminApproved>false</isAdminApproved>
+        <isConsumerSecretOptional>false</isConsumerSecretOptional>
+        <isIntrospectAllTokens>false</isIntrospectAllTokens>
+        <scopes>Api</scopes>
+        <scopes>Web</scopes>
+        <scopes>RefreshToken</scopes>
+    </oauthConfig>
+    <oauthPolicy>
+        <ipRelaxation>ENFORCE</ipRelaxation>
+        <refreshTokenPolicy>infinite</refreshTokenPolicy>
+    </oauthPolicy>
+</ConnectedApp>
