@@ -32,15 +32,9 @@ jobs:
       - run:
           name: Login to PRUEBA
           command: . build/setup-prod.sh
-<<<<<<< Updated upstream
          # - run:
           # name: Deploy to PRUEBA
            #command: . build/deploy-prod.sh
-=======
-        - run:
-          name: Deploy to PRUEBA
-          command: . build/deploy-prod.sh
->>>>>>> Stashed changes
 workflows:
   validate:
     jobs:
@@ -53,4 +47,4 @@ workflows:
           filters:
             branches:
               only:
-                - master
+                - develop
