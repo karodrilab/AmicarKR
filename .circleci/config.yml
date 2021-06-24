@@ -11,14 +11,15 @@ jobs:
       - run:
           name: Create Scratch Org
           command: . build/create-scratch-org.sh
-    #  - run:
-      #    name: Login to TEST
-       #   command: . build/setup-uat.sh
-      #- run:
-       #   name: Validate Components & Run Tests
-        #  command: . build/test.sh
-      - store_test_results:
-          path: /home/circleci/project
+    test:
+    docker:
+    - image: circleci/node:latest
+    steps:
+      - checkout
+      - run:
+          name: Validate Components & Run Tests
+          command: . build/setup-uat.sh
+      - run: echo "this is the test job"    
   deploy-prod:
     docker:
     - image: circleci/node:latest
@@ -42,7 +43,17 @@ workflows:
             branches:
               ignore:
                 - Master
+      - test:
+          requires:
+            - build
+      - hold:
+          type: approval
+          requires:
+            - build
+            - test
       - deploy-prod:
+          requires:
+            -hold
           filters:
             branches:
               only:
