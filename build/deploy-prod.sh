@@ -5,10 +5,10 @@ sfdx force:org:list
 echo "Command - sfdx force:mdapi:retrieve -r packageRoles -u my-hub-orgPruebasCI -k packageRoles/package.xml"
 #sfdx force:source:retrieve -r packageRoles -u my-hub-orgPruebasCI -k ./package.xml
 #sfdx force:mdapi:retrieve -r packageRoles -u my-hub-orgPruebasCI -k src/package.xml
-sfdx force: mdapi:convert -d deploy_prod -r packageRoles
+sfdx force: mdapi:convert -d deploy_prod -r pruebaPackage
 sfdx config:set defaultusername=consultor_force+amicar@nectia.com.pruebasci
 #sfdx force:mdapi:retrieve:report -u consultor_force+amicar@nectia.com.pruebasci
-sfdx force:mdapi:deploy -c -d packageRoles -u my-hub-orgPruebasCI -w 10 -l RunSpecifiedTests -r AMICAR_ChecklistGetJSONTest -w 33 --verbose --loglevel fatal
+sfdx force:mdapi:deploy -c -d pruebaPackage -u my-hub-orgPruebasCI -w 10 #-l RunSpecifiedTests -r AMICAR_ChecklistGetJSONTest -w 33 --verbose --loglevel fatal
 
 #-l RunSpecifiedTests -r AMICAR_ChecklistGetJSONTest -w 33 --verbose --loglevel fatal
 #-l RunLocalTests -d src -u my-hub-orgPruebasCI --verbose --loglevel fatal #Para todos por proyectos NO AMICAR!!!
