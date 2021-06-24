@@ -1,3 +1,3 @@
 public class Rodrigo  {
-    Account a = new Account();
+    public Account a = new Account();
 }

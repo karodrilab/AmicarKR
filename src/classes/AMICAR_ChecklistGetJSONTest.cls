@@ -43,6 +43,9 @@ private class AMICAR_ChecklistGetJSONTest {
 		isRequired  = obj.AmicarAssistance.get(0).isRequired;
 		selected    = obj.AmicarAssistance.get(0).selected;
 		
+		Rodrigo prueba = new Rodrigo();
+		prueba.a = new Account();
+
 		System.assert(obj != null);
 
 	}
