@@ -11,9 +11,9 @@ jobs:
       - run:
           name: Create Scratch Org
           command: . build/create-scratch-org.sh
-    test:
+  test:
     docker:
-    - image: circleci/node:latest
+     - image: circleci/node:latest
     steps:
       - checkout
       - run:
@@ -53,7 +53,7 @@ workflows:
             - test
       - deploy-prod:
           requires:
-            -hold
+           - hold
           filters:
             branches:
               only:
