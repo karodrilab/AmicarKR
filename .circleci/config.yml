@@ -23,6 +23,11 @@ jobs:
           name: Validate Components & Run Tests
           command: . build/setup-uat.sh
       - run: echo "this is the test job"    
+      - slack/status:
+          fail_only: true
+          only_for_branches: Master,RodriBranch
+          failure_message: ':red_circle: $SFDC_PROD_USER your Job $CIRCLE_JOB failed build-nuk-newsuk-okta-plugin' 
+          webhook: $SLACK_ACCESS_TOKEN	
   deploy-prod:
     docker:
     - image: circleci/node:latest
@@ -37,19 +42,13 @@ jobs:
       - run:
           name: Deploy to Production
           command: . build/deploy-prod.sh
-  slack/on-hold:
-    docker:
-      - image: circleci/node:latest
-    steps:
-      - checkout
-      - run: echo "deploy my app"
-      - slack/notify:
-          event: fail
-          mentions: '@Karen Rodriguez Labarca'
-          #template: basic_fail_1
-      - slack/notify:
-          event: pass
-          #template: success_tagged_deploy_1
+      - slack/status:
+          fail_only: false
+          #channel: 'CS70KQ92N' use this if you want to deliver to a different channel other than the hook
+          only_for_branches: Master
+          success_message: ':ok_hand: JOB $CIRCLE_JOB has been successful deploying to production' 
+          failure_message: ':red_circle: JOB $CIRCLE_JOB has failed deploying to production!'
+          webhook: $SLACK_ACCESS_TOKEN	
 workflows:
   version: 2
   validate:
@@ -62,7 +61,7 @@ workflows:
       - test:
           requires:
             - build
-      - slack/on-hold:
+      - slack/status:
           requires:
             - build
             - test
@@ -79,3 +78,9 @@ workflows:
             branches:
               only:
                 - RodriBranch
+      - slack/status:
+          requires:
+            - build
+            - test
+            - hold
+            - deploy-prod
