@@ -14,7 +14,7 @@ jobs:
       - slack/status:
           fail_only: true
           only_for_branches: Master,RodriBranch
-          failure_message: ':red_circle: $SFDC_PROD_USER your Job $CIRCLE_JOB failed build-nuk-newsuk-okta-plugin' 
+          failure_message: ':red_circle: $SFDC_PROD_USER your Job $CIRCLE_JOB failed BUILD' 
           webhook: $SLACK_ACCESS_TOKEN    
   test:
     docker:
@@ -31,7 +31,7 @@ jobs:
       - slack/status:
           fail_only: true
           only_for_branches: Master,RodriBranch
-          failure_message: ':red_circle: $SFDC_UAT_USER your Job $CIRCLE_JOB failed build-nuk-newsuk-okta-plugin' 
+          failure_message: ':red_circle: $SFDC_UAT_USER your Job $CIRCLE_JOB failed TEST' 
           webhook: $SLACK_ACCESS_TOKEN
   deploy-prod:
     docker:
