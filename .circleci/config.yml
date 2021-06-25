@@ -1,6 +1,7 @@
 version: 2
 orbs:
-    slack: circleci/slack@4.1.2
+    slack: circleci/slack@4.1
+    node: circleci/node:4.1
 jobs:
   build:
     docker:
@@ -30,9 +31,10 @@ jobs:
       - run: echo "this is the test job"    
   request-approval:
     docker:
-      - image: circleci/node:latest
+      - image: circleci/slack:latest
     steps:
       - slack/notify:
+          event: approval
           channel: https://nectiacloudsolutions.slack.com/archives/C022S0Q8C92
           color: '#42e2f4'
           mentions: '@KAREN RODRIGUEZ LABARCA'
@@ -74,6 +76,8 @@ workflows:
             - build
             - test
       - deploy-prod:
+          context:
+           - slack-secrets
           requires:
            - hold
            - request-approval
