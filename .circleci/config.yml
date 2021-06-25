@@ -11,7 +11,6 @@ jobs:
       - run:
           name: Create Scratch Org
           command: . build/create-scratch-org.sh
-      - run: echo "this is the test build"   
   test:
     docker:
      - image: circleci/node:latest
@@ -23,10 +22,20 @@ jobs:
       - run:
           name: Validate Components & Run Tests
           command: . build/setup-uat.sh
-      - run: echo "this is the test job"
+      - run: echo "this is the test job"    
   deploy-prod:
     docker:
     - image: circleci/node:latest
+
+    
+          
+            
+    
+
+          
+    
+    
+  
     steps:
       - checkout
       - run:
@@ -38,12 +47,11 @@ jobs:
       - run:
           name: Deploy to Production
           command: . build/deploy-prod.sh
-      - run: echo "this is the deploy"
 workflows:
   version: 2
   validate:
     jobs:
-      - build:        
+      - build:
           filters:
             branches:
               ignore:
@@ -62,4 +70,4 @@ workflows:
           filters:
             branches:
               only:
-                - RodriBrancH
+                - RodriBranch
