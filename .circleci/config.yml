@@ -37,7 +37,7 @@ jobs:
       - run:
           name: Deploy to Production
           command: . build/deploy-prod.sh
-   slack/on-hold:
+  slack/on-hold:
     docker:
       - image: circleci/node:latest
     steps:
