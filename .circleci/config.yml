@@ -1,10 +1,6 @@
 version: 2
 jobs:
- slack: circleci/slack@4.1
-jobs:
-  deploy:
-    docker:
-      - image: circleci/node:latest
+  slack: 
     steps:
       - run: echo "deploy my app"
       - slack/notify:
