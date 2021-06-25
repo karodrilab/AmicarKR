@@ -11,7 +11,7 @@ jobs:
       - run:
           name: Create Scratch Org
           command: . build/create-scratch-org.sh
-     steps:
+      - run: echo "this is the test build"   
       - slack/status:
           fail_only: true
           only_for_branches: Master,RodriBranch
@@ -29,7 +29,6 @@ jobs:
           name: Validate Components & Run Tests
           command: . build/setup-uat.sh
       - run: echo "this is the test job"    
-    steps:
       - slack/status:
           fail_only: true
           only_for_branches: Master,RodriBranch
@@ -49,7 +48,7 @@ jobs:
       - run:
           name: Deploy to Production
           command: . build/deploy-prod.sh
-    steps:
+      - run: echo "this is the deploy"   
       - slack/status:
           fail_only: false
           #channel: 'CS70KQ92N' use this if you want to deliver to a different channel other than the hook
