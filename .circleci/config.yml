@@ -69,6 +69,7 @@ workflows:
       - hold:
           type: approval
           requires:
+            - slack/on-hold
             - build
             - test
       - deploy-prod:
