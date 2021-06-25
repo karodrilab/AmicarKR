@@ -73,10 +73,10 @@ workflows:
           requires:
             - build
             - test
-            - hold
       - deploy-prod:
           requires:
            - hold
+           - request-approval
           filters:
             branches:
               only:
