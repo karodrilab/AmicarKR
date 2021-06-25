@@ -28,7 +28,7 @@ jobs:
       #    name: Validate Components & Run Tests
        #   command: . build/test.sh
       - run: echo "this is the test job"    
- request-approval:
+  request-approval:
     docker:
       - image: circleci/node:latest
     steps:
