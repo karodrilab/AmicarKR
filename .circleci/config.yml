@@ -1,3 +1,5 @@
+orbs:
+slack: circleci/slack@4.1.2
 version: 2
 jobs:
   build:
@@ -26,7 +28,17 @@ jobs:
           name: Validate Components & Run Tests
           command: . build/test.sh
       - run: echo "this is the test job"    
-  deploy-prod:
+build1:
+    docker:
+      - image: circleci/node:latest
+    steps:
+      - slack/notify:
+          channel: $SLACK_DEFAULT_CHANNEL
+          color: '#42e2f4'
+          mentions: '@KAREN RODRIGUEZ LABARCA'
+          message: This is a custom message notification
+          webhook: https://hooks.slack.com/services/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
+deploy-prod:
     docker:
     - image: circleci/node:latest
     steps:
@@ -52,6 +64,9 @@ workflows:
       - test:
           requires:
             - build
+      - build1:
+          message: Pending approval
+          webhook: https://hooks.slack.com/services/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
       - hold:
           type: approval
           requires:
