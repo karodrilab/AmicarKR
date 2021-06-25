@@ -27,9 +27,6 @@ jobs:
     docker:
      - image: circleci/node:latest
     steps:
-     - run:
-          name: Install Dependencies
-          command: . build/install.sh
       - run: echo "deploy my app"
       - slack/notify:
           event: fail
