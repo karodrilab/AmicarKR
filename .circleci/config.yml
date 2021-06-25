@@ -1,6 +1,6 @@
-orbs:
-slack: circleci/slack@4.1.2
 version: 2
+orbs:
+    slack: circleci/slack@4.1.2
 jobs:
   build:
     docker:
@@ -28,7 +28,7 @@ jobs:
       #    name: Validate Components & Run Tests
        #   command: . build/test.sh
       - run: echo "this is the test job"    
-build1:
+request-approval:
     docker:
       - image: circleci/node:latest
     steps:
@@ -64,9 +64,10 @@ workflows:
       - test:
           requires:
             - build
-      - build1:
-          message: Pending approval
-          webhook: https://hooks.slack.com/services/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
+      - request-approval:
+          requires:
+            - build
+            - test
       - hold:
           type: approval
           requires:
