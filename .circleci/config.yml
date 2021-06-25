@@ -24,6 +24,8 @@ jobs:
           command: . build/setup-uat.sh
       - run: echo "this is the test job"    
   slack: 
+    docker:
+     - image: circleci/node:latest
     steps:
       - run: echo "deploy my app"
       - slack/notify:
