@@ -76,8 +76,7 @@ workflows:
             - build
             - test
       - deploy-prod:
-          context:
-           - slack-secrets
+          contexts: slack-secrets
           requires:
            - hold
            - request-approval
