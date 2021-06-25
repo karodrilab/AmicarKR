@@ -84,11 +84,4 @@ workflows:
           filters:
             branches:
               only:
-                - RodriBranch
-      - slack/status:
-          requires:
-            - build
-            - test
-            - slack/status
-            - hold
-            - deploy-prod
+                - RodriBrancH
