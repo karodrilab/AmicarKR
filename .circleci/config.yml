@@ -28,12 +28,12 @@ jobs:
       #    name: Validate Components & Run Tests
        #   command: . build/test.sh
       - run: echo "this is the test job"    
-request-approval:
+ request-approval:
     docker:
       - image: circleci/node:latest
     steps:
       - slack/notify:
-          channel: $SLACK_DEFAULT_CHANNEL
+          channel: https://nectiacloudsolutions.slack.com/archives/C022S0Q8C92
           color: '#42e2f4'
           mentions: '@KAREN RODRIGUEZ LABARCA'
           message: This is a custom message notification
