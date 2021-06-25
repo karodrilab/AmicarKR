@@ -62,7 +62,6 @@ workflows:
           requires:
             - build
       - slack/on-hold:
-          context: slack-secrets
           requires:
             - build
             - test
