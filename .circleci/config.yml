@@ -64,15 +64,16 @@ workflows:
       - test:
           requires:
             - build
-      - request-approval:
-          requires:
-            - build
-            - test
       - hold:
           type: approval
           requires:
             - build
             - test
+       - request-approval:
+          requires:
+            - build
+            - test
+            - hold
       - deploy-prod:
           requires:
            - hold
